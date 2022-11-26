@@ -1,0 +1,27 @@
+<h2>BOOKS YOU HAVE PURCHASED</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Slno.</th>
+        <th scope="col">Bookname</th>
+        <th scope="col">Authorname</th>
+        <th scope="col">Type</th>
+        <th scope="col">AccessCode</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let array of purchasedarray">
+      <tr>
+        <th scope="row">*</th>
+        <td>{{array.Bookname}}</td>
+        <td>{{array.Authorname}}</td>
+        <td>{{array.Type}}</td>
+        <td>{{array.AccessCode}}</td>
+        <td>
+            <button class="btn btn-dark" (click)="returns(array.Bookname,array.Authorname,array.Type,array.AccessCode)" >Return</button>
+
+        </td>
+      </tr>
+    
+     
+    </tbody>

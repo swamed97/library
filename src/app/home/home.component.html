@@ -1,0 +1,62 @@
+<!-- As a link -->
+<nav class="navbar navbar-light bg-info">
+    <button type="button" class="btn btn-info" (click)="add()">AddBooks</button>
+    <a class="navbar-brand" href="#">Navbar</a>
+  </nav><br><br>
+
+
+  <div class="card" *ngIf="code">
+    <div class="AddBooks">
+        <span>Add Books</span>
+        <div class="details">
+            <input type="text" [(ngModel)]="bookname" placeholder="Book Name"><br>
+            <input type="text" [(ngModel)]="authorname" placeholder="Auther Name"><br>
+            <input type="text" [(ngModel)]="type" placeholder="Type"><br>
+            <input type="text" [(ngModel)]="accesscode" placeholder="Accesscode"><br>
+
+        </div>
+        <div class="btn">
+            <button class="btn btn-dark" (click)="addbook()">AddBook</button>
+            <button class="btn btn-dark" (click)="cancel()">cancel</button>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Slno.</th>
+        <th scope="col">Bookname</th>
+        <th scope="col">Authorname</th>
+        <th scope="col">Type</th>
+       
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let array of bookarray">
+      <tr>
+        <th scope="row">*</th>
+        <td>{{array.Bookname}}</td>
+        <td>{{array.Authorname}}</td>
+        <td>{{array.Type}}</td>
+      
+        <td>
+            <button class="btn btn-dark" (click)="deletebook(array.Bookname,array.Authorname)">Delete</button>
+
+        </td>
+      </tr>
+    
+     
+    </tbody>
+    <div class="col-sm-6" *ngIf="del" >
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Are you sure?</h5>
+            <div class="btn">
+                <button class="btn btn-dark" (click)="Bdelete()">delete</button>
+                <button class="btn btn-dark" (click)="Bcancel()">cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </table>

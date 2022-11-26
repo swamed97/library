@@ -1,0 +1,76 @@
+
+
+
+
+
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form  [formGroup]="angForm" method="post">
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                
+                <div class="form-group">
+                   
+                    <input class="form-control" formControlName="userid" type="text" placeholder="Userid">
+                </div>
+                <div *ngIf="angForm.controls['userid'].invalid && (angForm.controls['userid'].dirty || angForm.controls['userid'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['userid'].errors">
+                      Userid is required.
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                   
+                    <input class="form-control" formControlName="username" type="text" placeholder="Username">
+                </div>
+                <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['username'].errors">
+                      Userid is required.
+                    </div>
+                </div>    
+                
+                <div class="form-group">
+                   
+                    <input class="form-control" formControlName="email" type="text" placeholder="Email">
+                </div>
+                <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['username'].errors">
+                        Email is required.
+                    </div>
+                </div> 
+
+                <div class="form-group">
+                   
+                    <input class="form-control" formControlName="pswd" type="text" placeholder="Password">
+                </div>
+                <div *ngIf="angForm.controls['pswd'].invalid && (angForm.controls['pswd'].dirty || angForm.controls['pswd'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['pswd'].errors">
+                        Password is required.
+                    </div>
+                </div> 
+
+
+                <div class="form-group">
+                   
+                    <input class="form-control" formControlName="accesscode" type="text" placeholder="Accesscode">
+                </div>
+                <div *ngIf="angForm.controls['accesscode'].invalid && (angForm.controls['accesscode'].dirty || angForm.controls['accesscode'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['accesscode'].errors">
+                        Accesscode is required.
+                    </div>
+                </div> 
+                
+                <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="register()">Sign Up</button></div><a href="login" class="already">You already have an account? Login here.</a></form>
+        </div>
+    
+        
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+

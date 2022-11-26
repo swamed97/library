@@ -1,0 +1,28 @@
+<h2>BOOKS FOR YOU..!</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Slno.</th>
+        <th scope="col">Bookname</th>
+        <th scope="col">Authorname</th>
+        <th scope="col">Type</th>
+        <th scope="col">Accesscode</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let array of bookarray">
+      <tr>
+        <th scope="row">*</th>
+        <td>{{array.Bookname}}</td>
+        <td>{{array.Authorname}}</td>
+        <td>{{array.Type}}</td>
+        <td>{{array.AccessCode}}</td>
+        <td>
+            <button class="btn btn-dark" (click)="Purchase(array.Bookname,array.Authorname,array.Type,array.AccessCode)">Purchase</button>
+
+        </td>
+        
+      </tr>
+    
+     
+    </tbody>
